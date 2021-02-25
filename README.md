@@ -1,0 +1,1 @@
+# StrangeFate.github.io
