@@ -2,25 +2,32 @@
 layout: page
 title: About
 permalink: /about/
-image: 01.jpg
 ---
 
-Hi, my name is Alex Rodriguez. I like being at the center of events, being free and enjoying every moment. Copper mug fam food truck intelligentsia 8-bit echo park ramps meggings humblebrag tacos selfies. Umami austin mlkshk, sriracha sartorial everyday carry shaman meh coloring book taxidermy slow-carb scenester pitchfork echo park. Selvage bushwick chambray coloring book put a bird on it 90's stumptown intelligentsia direct trade. Cornhole +1 polaroid gentrify, offal twee before they sold out whatever wolf.
+안녕하세요. 한림대학교 영어영문학과 16학번 김기연의 블로그에 오신 것을 환영합니다.
+
+현재 블로그 구축 중입니다. 문의는 strangefate.k@gmail.com으로 해주시기 바랍니다.
+
 
 ***
 
-#### Austin scenester...
-<small>2008 - 2018</small>
+#### 한림대학교 입학(영어영문학과)
+<small>2016~</small>
 
-Offal post-ironic before they sold out mixtape you probably haven't heard of them. Pinterest roof party umami everyday carry street art. Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Authentic post-ironic kogi, schlitz shabby chic cardigan plaid artisan copper mug woke hoodie lumbersexual gluten-free franzen. Schlitz taiyaki freegan vinyl cloud bread narwhal, meh +1 cray prism fanny pack helvetica meditation chartreuse raw denim.
+한림대학교 영어영문학과 인문계열 수석 입학.
 
-#### Vinyl hexagon before...
-<small>2001 - 2008</small>
+#### 한림대학교 디지털인문예술전공 복수전공
+<small>2017~</small>
 
-Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Vinyl hexagon before they sold out, crucifix humblebrag squid chicharrones enamel pin. Iceland humblebrag farm-to-table, lyft pug tilde irony.
-Hot chicken shoreditch tousled listicle, actually meggings vape. Pok pok listicle meggings, gluten-free deep v you probably haven't heard of them taxidermy iPhone gentrify seitan. Marfa schlitz literally pour-over keffiyeh messenger bag synth pinterest godard knausgaard letterpress squid cardigan poke listicle. 
+한림대학교 디지털인문예술전공 복수전공. 한림대학교 강의실 찾기 어플 구글 플레이스토어 등록. 6개의 사이트에서 영단어 의미를 손쉽게 검색할 수 있는 WordSeeker 어플 구글 플레이스토어 등록.
+영문학 위키 프로젝트 진행.
 
-#### La croix you probably...
-<small>1995 - 2000</small>
+#### 군입대(카투사)
+<small>2018~2019</small>
 
-Shoreditch activated charcoal iceland hexagon. Glossier umami twee, snackwave paleo vaporware pickled tacos meditation typewriter drinking vinegar leggings. Mumblecore freegan butcher messenger bag, twee thundercats ennui gochujang disrupt mlkshk. Wayfarers neutra listicle YOLO ennui ramps vinyl tote bag waistcoat blue bottle poutine. Fam yuccie man bun brunch fashion axe XOXO ethical squid cray jianbing mustache. Leggings hell of shabby chic activated charcoal forage intelligentsia artisan cronut slow-carb tousled venmo mumblecore williamsburg. Tousled brunch leggings hella viral twee etsy 90's sartorial kogi keytar fam hot chicken yr. Meh small batch single-origin coffee brooklyn trust fund cornhole freegan stumptown banjo sriracha tote bag aesthetic listicle crucifix pug. Mustache vaporware kitsch, snackwave cronut semiotics viral cray lumbersexual pour-over forage.
+18년 3월경 육군 훈련소 입대. 평택 미군기지에서 전투헌병으로 19년 11월까지 근무
+
+#### 군제대 이후
+<small>2020~</small>
+
+Protec-Kids 프로젝트(어린이 교통사고 다발지점 분석). 코로나19와 항공산업 프로젝트 진행(코로나19가 대한민국 항공산업에 미친 영향 및 정부의 대처 분석). 
