@@ -3,3 +3,4 @@ _site
 .jekyll-metadata
 *.DS_Store
 Gemfile.lock
+.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/53/2336c5f7add5d4caa38a7642068f44a79a0c127b105fcf05317837f5344865
