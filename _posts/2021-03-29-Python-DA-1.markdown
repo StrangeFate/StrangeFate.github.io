@@ -2,7 +2,7 @@
 layout: post
 title:  "구글 플레이 앱 링크 가져오기 1회차"
 date:   2021-03-29 13:21:00 +0900
-image:  python_da_1_frontimg.png
+image:  python_da_1_frontimg.jpg
 tags:   StrangeFate
 ---
 
