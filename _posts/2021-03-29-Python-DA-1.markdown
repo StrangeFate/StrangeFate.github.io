@@ -2,7 +2,7 @@
 layout: post
 title:  "구글 플레이 앱 링크 가져오기 1회차"
 date:   2021-03-29 13:21:00 +0900
-image:  python_da_1_frontimg.jpg
+image:  python_da_1_frontimg.PNG
 tags:   StrangeFate
 ---
 
@@ -52,7 +52,7 @@ tags:   StrangeFate
 
 ***
 
-![]({{site.baseurl}}/images/python_da_1_img2.png)
+![]({{site.baseurl}}/images/python_da_1_img2.PNG)
 *구글 플레이 앱 카테고리 메인화면*
 
 사실 1번은 셀레니움을 실행시킬 때 url설정으로 가능하니 패스하고 2번을 들여다 볼 차례이다.
@@ -61,7 +61,7 @@ tags:   StrangeFate
 
 검색창에 키워드를 입력하려면 일단 검색창을 찾아야 한다. 크롬 개발 도구에서 마우스를 이용해 검색창을 눌러보았다.
 
-![]({{site.baseurl}}/images/python_da_1_img3.png)
+![]({{site.baseurl}}/images/python_da_1_img3.PNG)
 *구글 플레이 검색 창*
 
 그래서 나온 코드인데...태그는 input인데 속성이 엄청나게 많아 보인다. id도 보이고 class도 보이고 name에 type에...
