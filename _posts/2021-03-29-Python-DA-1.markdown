@@ -36,7 +36,7 @@ tags:   StrangeFate
 
 크롬드라이버 설치부터 간단한 셀레니움 사용법까지 쉽게 설명이 되어있어 쭉 읽고 따라하기만 해도 셀레니움이 작동하는 것을 볼 수 있었다.
 
-![]({{site.baseurl}}/images/python_da_1_img1.png)
+![]({{site.baseurl}}/images/python_da_1_img1.PNG)
 *크롬이 자동화된 테스트 소프트웨어에 의해 제어되고 있습니다.*
 
 초보코딩님의 친절한 설명 덕에 셀레니움의 실행은 성공했다.
