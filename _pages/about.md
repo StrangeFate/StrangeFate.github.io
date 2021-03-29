@@ -4,9 +4,9 @@ title: About
 permalink: /about/
 ---
 
-안녕하세요. 한림대학교 영어영문학과 16학번 김기연의 블로그에 오신 것을 환영합니다.
+안녕하세요. StrangeFate의 블로그에 오신 것을 환영합니다.
 
-현재 블로그 구축 중입니다. 문의는 strangefate.k@gmail.com으로 해주시기 바랍니다.
+문의는 strangefate.k@gmail.com으로 해주시기 바랍니다.
 
 
 ***
