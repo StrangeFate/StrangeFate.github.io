@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "구글 플레이 앱 링크 가져오기 2회차"
+title:  "플레이 스토어 리뷰 크롤링 - 2"
 date:   2021-03-29 15:15:00 +0900
 image:  python_da_1_frontimg.PNG
 tags:   StrangeFate
