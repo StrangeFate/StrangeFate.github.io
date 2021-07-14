@@ -16,16 +16,224 @@ tags:   플레이스토어 크롤링 파이썬 셀레니움
 
 ***
 
-![]({{site.baseurl}}/images/python_da_3_img1.PNG)
+<pre>
+<code>
+{% raw %}
+
+#폴더 내 어플 링크 txt파일 읽어오는 함수
+def altxtread() :
+    path = "./" #현재 디렉토리
+    file_list = os.listdir(path)
+    al_list_txt = [file for file in file_list if file.endswith("어플링크.txt")] #어플링크.txt로 끝나는 파일 찾기
+    return al_list_txt
+
+{%- endif -%}{% endraw %}
+</code>
+</pre>
+
 *앱 링크 txt파일을 불러와 링크를 순차적으로 여는 함수*
 
-![]({{site.baseurl}}/images/python_da_img1.PNG)
+<pre>
+<code>
+{% raw %}
+
+#실질적인 크롤링을 하는 함수. 인수로 어플 링크를 받음. #txt 파일 이름도 받음
+def crawler(x, keywordname) :
+    webdriver_options = webdriver.ChromeOptions()
+    webdriver_options .add_argument('headless')
+    driver = webdriver.Chrome('./chromedriver.exe', options=webdriver_options)
+    driver.get(x)
+    
+    name = driver.find_element_by_xpath("//h1[@class='AHFaub']").text #어플 이름 찾기
+    name = re.sub('[-=+,#/\?:^$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'…》]', '', name) #특수문자 포함된 이름으로 엑셀 시트 이름 설정 불가.
+    
+    print(name, " crawling is in operation", datetime.today().strftime("%Y/%m/%d %H:%M:%S")) #크롤링중인 앱 이름 확인
+ 
+    dev = driver.find_element_by_xpath("//a[@class='hrTbp R8zArc']").text #개발사 이름 찾기
+ 
+    cat = driver.find_element_by_xpath("//a[@itemprop='genre']").text #개발사 이름 찾기
+ 
+    detail = driver.find_element_by_xpath("//span[@jsslot]").text #어플 설명 찾기
+    
+    Udate = driver.find_element_by_xpath("//div/div[1]/span/div/span[@class='htlgb']").text #마지막 업데이트 날짜
+    
+    Inum = driver.find_element_by_xpath("//div/div[3]/span/div/span[@class='htlgb']").text #설치 수
+ 
+    RrateAll = driver.find_element_by_xpath("//div[@class='BHMmbe']").text #평균 평점 찾기
+ 
+    Rppl = driver.find_element_by_xpath("//span[@class='EymY4b']").text #평점 개수 찾기
+ 
+####리뷰 크롤링
+ 
+    driver.get(x + "&showAllReviews=true") 
+#주소에 &showAllReviews=true를 통해 전체 리뷰 화면으로 넘어감
+    time.sleep(2)
+    
+    print('review crawling is in operation now.', datetime.today().strftime("%Y/%m/%d %H:%M:%S")) #리뷰 크롤링 시작 알림
+ 
+    Scroll_pause_time = 3.5 #전체 리뷰를 불러오기 위해 자동으로 스크롤 다운 및 더보기를 눌러주는 기능
+    last_height = driver.execute_script("return document.body.scrollHeight")
+    while True:
+        for i in range(5) :
+            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+            time.sleep(Scroll_pause_time)
+            
+        try: #게시글이 표시될때까지 대기. 최대 20초. 게시글이 표시 될 경우 즉시 이하의 코드를 실행
+            element = WebDriverWait(driver, 20).until(
+                                                    EC.presence_of_element_located((By.CLASS_NAME, "CwaK9"))
+            )
+            print('더보기가 표시되었습니다.', datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+        except: 
+            print('게시글이 로드되지 않았습니다. 스크롤을 2회 다시 시도합니다.', datetime.today().strftime("%Y/%m/%d %H:%M:%S")) 
+            for i in range(2) :
+                driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                time.sleep(Scroll_pause_time)
+        try : 
+            viewmore = driver.find_element_by_xpath("//span[@class='RveJvd snByac']")
+            driver.execute_script("arguments[0].click();", viewmore)
+        except NoSuchElementException: 
+            pass
+        #최하단에는 더보기 버튼이 생기지 않아 오류 발생. 해당 오류를 무시하도록 수정
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        
+        if new_height == last_height:
+            break
+        last_height = new_height
+    
+    viewallreviews = driver.find_elements_by_xpath("//button[@class='LkLjZd ScJHi OzU4dc  ']")
+    viewallreviews
+    
+    print(str(name) + "'s review expanding is now in operation.", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+ 
+    for i in range(len(viewallreviews)) : #전체보기 버튼이 있는 리뷰 처리
+        
+        isTrue = viewallreviews[i].is_displayed()
+        print("Element is visible?" + str(isTrue))
+        if isTrue: 
+            viewallreviews[i].send_keys(Keys.ENTER) #click 명령어로는 작동 하지 않음. 기존 코드 수정
+            print(str(i)+"th more button is clicked and wait 0.5 secs...")
+            time.sleep(0.8)
+        
+    ####스크롤 기능 및 전체보기 버튼 클릭 종료  
+ 
+    reviews = driver.find_elements_by_xpath("//span[@jsname='bN97Pc']") #기본리뷰
+    long_reviews = driver.find_elements_by_xpath("//span[@jsname='fbQN7e']") #전체보기버튼 눌러 확인하는 리뷰
+    
+    try :
+        developer_review_answers = driver.find_elements_by_xpath("//div[@class='LVQB0b']") #개발자 리뷰 답변
+        developer_review_answers_date = driver.find_elements_by_xpath("//div[2]/div[3]/div[2]/span[2][@class='p2TkOb']") #개발자리뷰답변날짜
+    except NoSuchElementException :
+        pass
+    print("merging reviews...", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+ 
+    #전체보기 리뷰는 기본 리뷰에 포함되지 않음. 두 리뷰를 합쳐주어야 함. 
+    merged_review = [t.text if t.text!='' else long_reviews[i].text for i,t in enumerate(reviews)] ##전체 리뷰 LIST방식
+    
+    print("reviews are merged", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+    
+    #### 개별 리뷰 별점등 크롤링
+    
+    Rdate = driver.find_elements_by_xpath("//span[@class='p2TkOb']") #개별 리뷰 등록 날짜 LIST 방식
+    Rlike = driver.find_elements_by_xpath("//div[@aria-label='이 리뷰가 유용하다는 평가를 받은 횟수입니다.']") #좋아요 갯수 LIST방식
+    Rstar = driver.find_elements_by_xpath("//span[@class='nt2C1d']/div[@class='pf5lIe']/div[@role='img']") # 평점 LIST방식 .get_attribute('aria_label') 사용할 것
+    
+    print("data is being saved in excel", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+    
+    save_in_excel(keywordname, name, dev, cat, detail, Udate, Inum, RrateAll, Rppl, merged_review, Rdate, Rlike, Rstar, developer_review_answers, developer_review_answers_date) #엑셀로 저장하는 함수
+    
+    driver.quit() #웹드라이버 종료 및 크롬 창 종료. 메모리 관리 목적.
+
+{%- endif -%}{% endraw %}
+</code>
+</pre>
+
 *실질적 크롤링을 하는 함수, 앱 이름, 개발사 이름 등 기본적인 정보부터 전체 리뷰를 보는 기능까지 구현되어있다.*
 
-![]({{site.baseurl}}/images/python_da_img1.PNG)
+<pre>
+<code>
+{% raw %}
+
+#엑셀로 저장하는 함수
+def save_in_excel(keywordname, name, dev, cat, detail, Udate, Inum, RrateAll, Rppl, merged_review, Rdate, Rlike, Rstar, developer_review_answers, developer_review_answers_date) :
+    crawlreview = [] #리뷰 딕셔너리
+    appdata = [] #이름, 개발사 등 저장 딕셔너리
+    developer_review = [] #개발사 리뷰 답변 딕셔너리
+    Rlike_int = 0
+    
+    print('review dictionary is being made', datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+    for i in range(len(merged_review)) : ##리뷰 딕셔너리 for i in range(len(merged_review))
+        if Rlike[i].text == '' :
+            Rlike_int = '0'
+        else :
+            Rlike_int = Rlike[i].text
+        crawlreview.append({
+            'DATE' : Rdate[i].text,
+            'STAR' : int(Rstar[i].get_attribute('aria-label')[10:11]),
+            'LIKE' : int(Rlike_int),
+            'REVIEW' : merged_review[i]
+        })
+        
+    print('appdata dictionary is being made', datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+    appdata.append({  #이름, 개발사 등 저장 딕셔너리
+        'NAME' : name,
+        'DEVELOPER' : dev,
+        'CATEGORY' : cat,
+        'DESCRIPTION' : detail,
+        'LATEST_UPDATE' : Udate,
+        'INSTALLED' : Inum,
+        'AVERAGE_RATE' : float(RrateAll),
+        'RATE_COUNT' : Rppl,
+        'ACQUIRED_DATE' : datetime.today().strftime("%Y/%m/%d %H:%M:%S") #크롤링된 날짜 및 시간
+    })
+    
+    print('developer_review_answer dictionary is being made', datetime.today().strftime("%Y/%m/%d %H:%M:%S")) #개발사 리뷰 답변 딕셔너리
+    for i in range(len(developer_review_answers)) :
+        developer_review.append({
+            'DEVELOPER_answer_date' : developer_review_answers_date[i].text,
+            'DEVELOPER_answer' : developer_review_answers[i].text[len(dev)+len(developer_review_answers_date[i].text)+1:] #개발사, 날짜가 포함된 스트링 슬라이스. +1은 날짜 직후에 줄바꿈 해결하기 위함
+        })
+        
+        
+    print("data are being transform into dataframe...", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+    appdata_df = pd.DataFrame(appdata) #데이터프레임 화
+    crawlreview_df = pd.DataFrame(crawlreview)
+    developer_review_df = pd.DataFrame(developer_review)
+    
+    print("data are being saved in excel now.", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+
+    total_df = pd.concat([appdata_df, crawlreview_df, developer_review_df], axis = 1) #세 딕셔너리 합치기
+    
+    if not os.path.exists(keywordname[:len(keywordname)-6]+".xlsx") : #엑셀 파일 이름은 어플링크 파일에서 링크 부분 삭제한 이름
+        with pd.ExcelWriter(keywordname[:len(keywordname)-6]+".xlsx", mode='w', engine='openpyxl') as writer : #엑셀 파일 없으면 생성
+            total_df.to_excel(writer, sheet_name = name)
+    else: 
+        with pd.ExcelWriter(keywordname[:len(keywordname)-6]+".xlsx", mode='a', engine='openpyxl') as writer : #엑셀 파일 있으면 해당 파일 내 시트 추가
+            total_df.to_excel(writer, sheet_name = name) #시트 이름은 어플 이름
+    print("DONE", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
+
+{%- endif -%}{% endraw %}
+</code>
+</pre>
 *위 크롤링 함수의 데이터를 받아 엑셀에 저장하는 함수*
 
-![]({{site.baseurl}}/images/python_da_img6.PNG)
+<pre>
+<code>
+{% raw %}
+
+#allist함수에 crawler함수 조함. 
+def web_crawler() :
+    for i in altxtread() :
+        keywordname = i #링크 txt파일 이름
+        f = open(i, "r")
+        applists = f.readlines()
+        f.close()
+        for x in applists :
+            crawler(x, keywordname) #크롤러로 txt파일 이름 보내주기
+            time.sleep(5)
+
+{%- endif -%}{% endraw %}
+</code>
+</pre>
 *크롤링에 필요한 모든 함수를 총집합시킨 함수*
 
 참고로 위 사진의 코드들은 2개월동안 이런저런 수정이 이루어진 코드들이다.
