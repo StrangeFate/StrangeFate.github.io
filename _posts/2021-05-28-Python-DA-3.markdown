@@ -27,7 +27,7 @@ def altxtread() :
     al_list_txt = [file for file in file_list if file.endswith("어플링크.txt")] #어플링크.txt로 끝나는 파일 찾기
     return al_list_txt
 
-{%- endif -%}{% endraw %}
+{% endraw %}
 </code>
 </pre>
 
@@ -145,7 +145,7 @@ def crawler(x, keywordname) :
     
     driver.quit() #웹드라이버 종료 및 크롬 창 종료. 메모리 관리 목적.
 
-{%- endif -%}{% endraw %}
+{% endraw %}
 </code>
 </pre>
 
@@ -215,7 +215,7 @@ def save_in_excel(keywordname, name, dev, cat, detail, Udate, Inum, RrateAll, Rp
             total_df.to_excel(writer, sheet_name = name) #시트 이름은 어플 이름
     print("DONE", datetime.today().strftime("%Y/%m/%d %H:%M:%S"))
 
-{%- endif -%}{% endraw %}
+{% endraw %}
 </code>
 </pre>
 *위 크롤링 함수의 데이터를 받아 엑셀에 저장하는 함수*
@@ -237,7 +237,7 @@ def web_crawler() :
             crawler(x, keywordname) #크롤러로 txt파일 이름 보내주기
             time.sleep(5)
 
-{%- endif -%}{% endraw %}
+{% endraw %}
 </code>
 </pre>
 *크롤링에 필요한 모든 함수를 총집합시킨 함수*
