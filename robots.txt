@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://strangefate.github.io/%22%22/sitemap.xml
+Sitemap: https://strangefate.github.io/sitemap.xml
