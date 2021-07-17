@@ -1,5 +1,6 @@
-{% for post in site.posts %}
-    {% unless post.published == false %}
-<loc>{{ site.url }}{{ post.url }}</loc>
-    {% endunless %}
-{% endfor %}
+https://strangefate.github.io/2021/07/14/Python-DA-4.html
+https://strangefate.github.io/2021/05/28/Python-DA-3/
+https://strangefate.github.io/2021/05/24/Insta-Crawl/
+https://strangefate.github.io/2021/03/29/Python-DA-2/
+https://strangefate.github.io/2021/03/29/Python-DA-1/
+https://strangefate.github.io/2021/02/25/Blog-of-StrangeFate/
