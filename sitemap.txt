@@ -1,0 +1,5 @@
+{% for post in site.posts %}
+    {% unless post.published == false %}
+<loc>{{ site.url }}{{ post.url }}</loc>
+    {% endunless %}
+{% endfor %}
