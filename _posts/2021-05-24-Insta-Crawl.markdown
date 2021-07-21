@@ -75,6 +75,9 @@ tags:   인스타그램크롤링 크롤링 파이썬 셀레니움
 
 [코드 보러가기](https://drive.google.com/drive/folders/1aRUHS5Be6yJe2AhWRsMCMQ1XwdKwdVsu?usp=sharing)
 
+
+[Github](https://github.com/StrangeFate/InstaCrawl/tree/main)
+
 다운로드를 받지 않고 코드만 읽고 싶다면 구글 콜랩 사용을 추천한다.
 
 크롤링 부분의 코드가 콜랩에 맞게 수정되지 않아 작동하진 않겠지만 그저 코드를 훑어 보는 것에는 큰 문제가 없을 것이라 생각된다.
