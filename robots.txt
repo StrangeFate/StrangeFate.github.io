@@ -4,4 +4,4 @@ Allow: /
 Sitemap: http://strangefate.github.io/sitemap.xml
 
 
-#DaumWebMasterTool:3276cf77f0119ae7ebb87b52b0d459b3a9a32a9a1e5b651e943bac5fdb95e8fd:bmYMVC5bUHcwT3R5112vgA==
+#DaumWebMasterTool:3276cf77f0119ae7ebb87b52b0d459b3a9a32a9a1e5b651e943bac5fdb95e8fd:SxqyPLjMv2q3i7fWLrOG8g==
