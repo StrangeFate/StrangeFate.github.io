@@ -38,8 +38,11 @@ Protec-Kids 프로젝트(어린이 교통사고 다발지점 분석). 코로나1
 <small>2022.02</small>
 
 한림대학교 졸업
+
 영어영문학과, 문학사
+
 디지털인문예술전공, 문학사
+
 Magna Cum Laude
 
 <small>2022.03~</small>
