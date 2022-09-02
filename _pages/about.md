@@ -4,9 +4,10 @@ title: About
 permalink: /about/
 ---
 
-안녕하세요. StrangeFate의 블로그에 오신 것을 환영합니다.
+안녕하세요. StrangeFate (김기연) 의 블로그에 오신 것을 환영합니다.
 
-문의는 strangefate.k@gmail.com으로 해주시기 바랍니다.
+
+문의는 strangefate.k@gmail.com 또는 dekmj001@gmail.com 으로 해주시기 바랍니다.
 
 
 ***
@@ -28,7 +29,22 @@ permalink: /about/
 18년 3월경 육군 훈련소 입대. 평택 미군기지에서 전투헌병으로 19년 11월까지 근무
 
 #### 군제대 이후
-<small>2020~</small>
+<small>2020</small>
 
 Protec-Kids 프로젝트(어린이 교통사고 다발지점 분석). 코로나19와 항공산업 프로젝트 진행(코로나19가 대한민국 항공산업에 미친 영향 및 정부의 대처 분석). 
+
+#### 학부 졸업 이후
+
+<small>2022.02</small>
+
+한림대학교 졸업
+영어영문학과, 문학사
+디지털인문예술전공, 문학사
+Magna Cum Laude
+
+<small>2022.03~</small>
+
+한림대학교 일반대학원 융합소프트웨어학과 입학 (자연어처리 연구실, 석사과정)
+
+
 
